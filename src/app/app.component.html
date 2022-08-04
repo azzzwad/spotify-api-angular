@@ -1,0 +1,198 @@
+<main>
+  <div class="centered">
+    <h1 style="color: var(--neutral-700); text-transform: uppercase">
+      Spotify Api Test
+    </h1>
+  </div>
+  <div class="centered">
+    <p style="color: var(--neutral-200) !important; margin-top: -25px">
+      communicating the spotify API through my angular app
+    </p>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <!-- artist name input -->
+      <div>
+        <input
+          [formControl]="artistinputField"
+          type="text"
+          id="keyword"
+          placeholder="Search for artists..."
+          autofocus
+          style="
+            padding: 5px 15px;
+            border: 1px solid var(--neutral-100);
+            color: var(--neutral-200) !important;
+            outline: none;
+            width: 100%;
+          "
+        />
+      </div>
+
+      <div style="margin-top: 15px">
+        <ul style="padding: 0">
+          <div *ngFor="let item of artistResults">
+            <li style="list-style: none">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5
+                    style="
+                      color: var(--neutral-600) !important;
+                      text-transform: lowercase;
+                    "
+                  >
+                    {{ item.name }}
+                  </h5>
+                  <p
+                    style="
+                      font-size: 12px !important;
+                      color: var(--neutral-200) !important;
+                    "
+                  >
+                    genres :
+                    <span *ngFor="let genre of item.genres">
+                      {{ genre }},
+                    </span>
+                  </p>
+                  <p
+                    style="
+                      font-size: 12px !important;
+                      color: var(--neutral-200) !important;
+                    "
+                  >
+                    followers on Spotify : {{ item.followers.total }}
+                  </p>
+                  <p
+                    style="
+                      font-size: 12px !important;
+                      color: var(--neutral-200) !important;
+                    "
+                  >
+                    popularity score : {{ item.popularity }}
+                  </p>
+                </div>
+                <div
+                  class="col-md-6"
+                  style="display: grid; place-items: center"
+                >
+                  <div
+                    style="
+                      padding: 5px;
+                      background-color: var(--primary-color);
+                      border-radius: 50%;
+                      width: fit-content;
+                    "
+                  >
+                    <img
+                      src="{{ item.images['0']?.url }}"
+                      alt="{{ item.name }}"
+                      style="
+                        height: 100px;
+                        width: 100px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                      "
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+            <br />
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <!-- track name input -->
+      <div>
+        <input
+          [formControl]="trackinputField"
+          type="text"
+          id="keyword"
+          placeholder="Search for tracks..."
+          autofocus
+          style="
+            padding: 5px 15px;
+            border: 1px solid var(--neutral-100);
+            color: var(--neutral-200) !important;
+            outline: none;
+            width: 100%;
+          "
+        />
+      </div>
+      <div style="margin-top: 15px">
+        <ul style="padding: 0">
+          <div *ngFor="let item of trackResults">
+            <li style="list-style: none">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5
+                    style="
+                      color: var(--neutral-600) !important;
+                      text-transform: lowercase;
+                    "
+                  >
+                    {{ item.name }}
+                  </h5>
+
+                  <p
+                    style="
+                      font-size: 12px !important;
+                      color: var(--neutral-200) !important;
+                    "
+                  >
+                    duration: {{ convertDuration(item.duration_ms) }}
+                  </p>
+
+                  <p
+                    style="
+                      font-size: 12px !important;
+                      color: var(--neutral-200) !important;
+                    "
+                  >
+                    album: {{ item.album.name }}
+                  </p>
+                  <p
+                    style="
+                      font-size: 12px !important;
+                      color: var(--neutral-200) !important;
+                    "
+                  >
+                    artist: {{ item.album.artists[0].name }}
+                  </p>
+                  <p
+                    style="
+                      font-size: 12px !important;
+                      color: var(--neutral-200) !important;
+                    "
+                  >
+                    popularity score: {{ item.popularity }}
+                  </p>
+                </div>
+                <div
+                  class="col-md-6"
+                  style="display: grid; place-items: center"
+                >
+                  <img
+                    src="{{ item.album.images[0]?.url }}"
+                    style="
+                      width: 100px;
+                      height: 100px;
+                      object-fit: cover;
+                      border-radius: 50%;
+                    "
+                    alt=""
+                  />
+                </div>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</main>

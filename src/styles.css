@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@import "~ngx-toastr/toastr";
+
+:root {
+  /* Primary Color Pallette */
+  --primary-color-200: hsl(141, 43%, 72%);
+  --primary-color-300: hsl(141, 53%, 62%);
+  --primary-color-400: hsl(141, 63%, 52%);
+  --primary-color: hsl(141, 73%, 42%);
+  --primary-color-700: hsl(141, 83%, 32%);
+
+  /* Secondary Color Pallette */
+  --secondary-color: hsl(0, 11%, 9%);
+
+  /* neutral-color pallette */
+  --neutral-50: #f7f7f7;
+  --neutral-100: #dedede;
+  --neutral-200: #c4c4c4;
+  --neutral-500: #787878;
+  --neutral-600: #4f5b5e;
+  --neutral-700: #334145;
+
+  /* text color pallette */
+  --text-light: #454545;
+  --text-dark: #151515;
+}
+
+h1 {
+  font-family: "Teko", sans-serif;
+  font-size: 110px !important;
+  font-weight: 600 !important;
+  color: var(--text-dark);
+}
+h2 {
+  font-family: "Teko", sans-serif;
+  font-size: 70px !important;
+  font-weight: 500 !important;
+  color: var(--text-dark);
+}
+
+h3 {
+  font-family: "Teko", sans-serif;
+  font-size: 48px !important;
+  font-weight: 400 !important;
+  color: var(--text-dark);
+}
+h4 {
+  font-family: "Teko", sans-serif;
+  font-size: 36px !important;
+  font-weight: 400 !important;
+  color: var(--text-dark);
+}
+h5 {
+  font-family: "Teko", sans-serif;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  color: var(--text-dark);
+}
+h6 {
+  font-family: "Teko", sans-serif;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  color: var(--text-dark);
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: var(--text-light) !important;
+}
+
+main {
+  margin: 5rem 10rem !important;
+  /* background-color: var(--primary-color-200); */
+}
+
+.centered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
